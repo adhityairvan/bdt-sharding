@@ -147,6 +147,7 @@
    sh.addShard("mongo-shard-1:27017")
    ```
 4. do these step above on each shard server
+
 ![](https://github.com/adhityairvan/bdt-sharding/raw/master/image/Annotation%202019-11-18%20121239.jpg)
 
 ## Enabling Sharding 
