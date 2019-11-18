@@ -18,6 +18,7 @@ mongoose.connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${proc
     user: process.env.DB_USER,
     pass: process.env.DB_PASS,
     promiseLibrary: global.Promise,
+    useUnifiedTopology: true
 })
 .catch(error => console.log(error))
 app.use(bodyParser.json())

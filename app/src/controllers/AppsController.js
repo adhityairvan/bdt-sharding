@@ -63,17 +63,14 @@ exports.deletebyId = async (req, res) => {
 }
 
 exports.createApp = async (req, res) => {
-    app = new Apps()
-    app.App = 'SUPERMAN'
-    app.Category = 'BUKU'
-    app.Size = '10MB'
-    try {
-        app = await app.save()
-    }
-    catch (e){
-        res.json(e)
-    }
-    res.json(app)
+    app = new Apps(req.body)
+    app.save().then(app => res.json(app)).catch(e => res.json(e))
+}
+
+exports.updateApp = async (req, res) => {
+    const id = req.params.id
+    app = await Apps.updateOne({_id : id}, req.body)
+    return res.json(app)
 }
 
 exports.getRecords = getRecords
