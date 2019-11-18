@@ -72,6 +72,7 @@
    ```
    rs.status()
    ```
+   ![](https://github.com/adhityairvan/bdt-sharding/raw/master/image/Annotation%202019-11-18%20023042.jpg)
 
 ## Configure Query Router server
 1. Create new file `/etc/mongos.conf`
@@ -130,6 +131,7 @@
    ```
    sudo systemctl start mongos
    ```
+   ![](https://github.com/adhityairvan/bdt-sharding/raw/master/image/Annotation%202019-11-18%20115719.jpg)
 
 ## Adding shard server to Cluster
 1. Edit mongod.conf on each of shard server
@@ -145,6 +147,7 @@
    sh.addShard("mongo-shard-1:27017")
    ```
 4. do these step above on each shard server
+   ![](https://github.com/adhityairvan/bdt-sharding/raw/master/image/Annotation%202019-11-18%20121239.jpg)
 
 ## Enabling Sharding 
 1. Enable sharding on the database
@@ -163,8 +166,10 @@
    ```
    mongoimport -h mongo-query-router -u adhityairvan -p bdt2019 --authenticationDatabase admin -d Playstore -c Apps --type csv --file /vagrant/googleplaystore.csv --headerline
    ```
+   ![](https://github.com/adhityairvan/bdt-sharding/raw/master/image/Annotation%202019-11-18%20132808.jpg)
 3. check the sharding stats on the collection
    ```
    db.Apps.getShardDistribution()
    ```
+   ![](https://github.com/adhityairvan/bdt-sharding/raw/master/image/Annotation%202019-11-18%201330272.jpg)
    
